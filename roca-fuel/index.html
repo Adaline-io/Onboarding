@@ -379,7 +379,7 @@ h2.sec-title{font-size:clamp(26px,4.2vw,38px);line-height:1.1;color:var(--ink);m
     <div class="fld-row">
       <div class="fld">
         <label for="legal_name">Legal Entity Name <span class="req">*</span></label>
-        <input type="text" id="legal_name" name="legal_name" required placeholder="e.g. Roca Fuel Trading Co. W.L.L.">
+        <input type="text" id="legal_name" name="legal_name" required placeholder="e.g. Roca Fuel Energy LLP">
         <div class="err-msg">Required</div>
       </div>
       <div class="fld">
@@ -414,15 +414,6 @@ h2.sec-title{font-size:clamp(26px,4.2vw,38px);line-height:1.1;color:var(--ink);m
       <div class="err-msg">Required</div>
     </div>
 
-    <div class="fld">
-      <label>Invoice Currency Preference <span class="req">*</span></label>
-      <div class="opt-group">
-        <label class="opt"><input type="radio" name="currency" value="INR" required><span class="dot"></span>INR</label>
-        <label class="opt"><input type="radio" name="currency" value="USD"><span class="dot"></span>USD</label>
-      </div>
-      <div class="hint">Invoiced in INR by default; USD available at the prevailing exchange rate</div>
-      <div class="err-msg">Pick one</div>
-    </div>
   </div>
 
   <h3 style="font-family:var(--display);font-size:18px;color:var(--ink);margin:36px 0 18px;font-weight:700">Decision-Maker (signs off on design, scope, payment)</h3>
@@ -447,7 +438,7 @@ h2.sec-title{font-size:clamp(26px,4.2vw,38px);line-height:1.1;color:var(--ink);m
       </div>
       <div class="fld">
         <label for="dm_phone">Phone / WhatsApp <span class="req">*</span></label>
-        <input type="tel" id="dm_phone" name="dm_phone" required placeholder="+965...">
+        <input type="tel" id="dm_phone" name="dm_phone" required placeholder="+91...">
         <div class="err-msg">Required</div>
       </div>
     </div>
@@ -481,7 +472,7 @@ h2.sec-title{font-size:clamp(26px,4.2vw,38px);line-height:1.1;color:var(--ink);m
 
 <section id="project" class="page" aria-labelledby="project-title">
   <div class="kicker">02 · Project Foundation</div>
-  <h2 class="sec-title" id="project-title">Brand, products, photography. What's ready, what's not.</h2>
+  <h2 class="sec-title" id="project-title">Your brand. What we'll build from.</h2>
   <p class="sec-sub">Honest answers here save everyone time. If something's not ready we'll plan around it, not pretend it is.</p>
 
   <div class="form-section">
@@ -501,70 +492,13 @@ h2.sec-title{font-size:clamp(26px,4.2vw,38px);line-height:1.1;color:var(--ink);m
       <label for="brand_notes">Brand Notes (optional)</label>
       <textarea id="brand_notes" name="brand_notes" placeholder="Colors you must use / must avoid, fonts, tone of voice, visual references you love or hate"></textarea>
     </div>
-
-    <div class="fld-row">
-      <div class="fld">
-        <label for="customer_base_size">Approx. Total Products <span class="req">*</span></label>
-        <input type="number" id="customer_base_size" name="customer_base_size" required value="500" min="1" placeholder="500">
-        <div class="hint">Roughly. We'll structure the catalog around this number.</div>
-        <div class="err-msg">Required</div>
-      </div>
-      <div class="fld">
-        <label for="categories_count">Approx. Categories</label>
-        <input type="number" id="categories_count" name="categories_count" value="5" min="1" placeholder="5">
-        <div class="hint">Cardio, Strength (sub-types), Accessories, etc.</div>
-      </div>
-    </div>
-
-    <div class="fld">
-      <label>Product Data Ready? <span class="req">*</span></label>
-      <div class="hint" style="margin-bottom:10px">Spec sheets, dimensions, weights, descriptions for each product</div>
-      <div class="opt-cards">
-        <label class="opt-card"><input type="radio" name="product_data" value="ready" required><span class="dot"></span><div class="ct"><div class="h">Ready</div><div class="d">All in a spreadsheet, ready to share</div></div></label>
-        <label class="opt-card"><input type="radio" name="product_data" value="partial"><span class="dot"></span><div class="ct"><div class="h">Partial</div><div class="d">Some categories ready, others need work</div></div></label>
-        <label class="opt-card"><input type="radio" name="product_data" value="need_template"><span class="dot"></span><div class="ct"><div class="h">Need template</div><div class="d">Send us a spreadsheet to fill in</div></div></label>
-      </div>
-      <div class="err-msg">Pick one</div>
-    </div>
-
-    <div class="fld">
-      <label>Product Photography <span class="req">*</span></label>
-      <div class="hint" style="margin-bottom:10px">Clean studio shots of every machine — without these the catalog can't ship</div>
-      <div class="opt-cards">
-        <label class="opt-card"><input type="radio" name="photography" value="all_ready" required><span class="dot"></span><div class="ct"><div class="h">All ready</div><div class="d">Studio shots for every product available</div></div></label>
-        <label class="opt-card"><input type="radio" name="photography" value="partial"><span class="dot"></span><div class="ct"><div class="h">Some ready</div><div class="d">Top sellers done, long tail missing</div></div></label>
-        <label class="opt-card"><input type="radio" name="photography" value="need_shoot"><span class="dot"></span><div class="ct"><div class="h">Need shoot</div><div class="d">Need professional photography arranged</div></div></label>
-        <label class="opt-card"><input type="radio" name="photography" value="use_supplier"><span class="dot"></span><div class="ct"><div class="h">Supplier photos</div><div class="d">Use manufacturer (DHZ etc.) photos for now</div></div></label>
-      </div>
-      <div class="err-msg">Pick one</div>
-    </div>
-
-    <div class="fld">
-      <label>Existing Brochure / Catalog PDF</label>
-      <div class="opt-group">
-        <label class="opt"><input type="radio" name="brochure" value="yes_share"><span class="dot"></span>Yes — will share</label>
-        <label class="opt"><input type="radio" name="brochure" value="needs_redesign"><span class="dot"></span>Yes — needs redesign</label>
-        <label class="opt"><input type="radio" name="brochure" value="no"><span class="dot"></span>None yet</label>
-      </div>
-      <div class="hint">If "needs redesign" — Motiontape can quote separately (₹15–25K for a clean 24-page catalog)</div>
-    </div>
-
-    <div class="fld">
-      <label>Bilingual Support <span class="req">*</span></label>
-      <div class="hint" style="margin-bottom:10px">DHZ (your reference) supports many languages — what does Roca Fuel need at launch?</div>
-      <div class="opt-cards">
-        <label class="opt-card"><input type="radio" name="bilingual" value="en_only" required><span class="dot"></span><div class="ct"><div class="h">English only</div><div class="d">Phase 1, simplest, fastest to launch</div></div></label>
-        <label class="opt-card"><input type="radio" name="bilingual" value="en_ml"><span class="dot"></span><div class="ct"><div class="h">English + Malayalam</div><div class="d">Adds scope (+₹15–20K) — confirms in kickoff</div></div></label>
-      </div>
-      <div class="err-msg">Pick one</div>
-    </div>
   </div>
 </section>
 
 
 <section id="access" class="page" aria-labelledby="access-title">
   <div class="kicker">03 · Technical Access</div>
-  <h2 class="sec-title" id="access-title">Domain, hosting, email, social — who controls what.</h2>
+  <h2 class="sec-title" id="access-title">Domain and hosting — who controls what.</h2>
   <p class="sec-sub">We need access to deploy. Tell us what exists and who holds the keys.</p>
 
   <div class="form-section">
@@ -609,45 +543,6 @@ h2.sec-title{font-size:clamp(26px,4.2vw,38px);line-height:1.1;color:var(--ink);m
         </div>
       </div>
     </div>
-
-    <div class="fld">
-      <label>Webmail Addresses — confirm or edit <span class="req">*</span></label>
-      <div class="hint" style="margin-bottom:10px">Three Google Workspace accounts included. These get set up at launch.</div>
-      <div class="fld-row">
-        <div class="fld">
-          <label for="email_1" style="font-size:10px;color:var(--muted)">Address 1</label>
-          <input type="text" id="email_1" name="email_1" required value="info@rocafuel.com">
-        </div>
-        <div class="fld">
-          <label for="email_2" style="font-size:10px;color:var(--muted)">Address 2</label>
-          <input type="text" id="email_2" name="email_2" required value="sales@rocafuel.com">
-        </div>
-      </div>
-      <div class="fld">
-        <label for="email_3" style="font-size:10px;color:var(--muted)">Address 3</label>
-        <input type="text" id="email_3" name="email_3" required value="support@rocafuel.com">
-      </div>
-      <div class="err-msg">All three required</div>
-    </div>
-
-    <div class="fld">
-      <label>Active Social Media Accounts</label>
-      <div class="hint" style="margin-bottom:10px">Tick whichever apply — links go in the new site footer</div>
-      <div class="opt-group">
-        <label class="opt"><input type="checkbox" name="social" value="instagram"><span class="dot"></span>Instagram</label>
-        <label class="opt"><input type="checkbox" name="social" value="facebook"><span class="dot"></span>Facebook</label>
-        <label class="opt"><input type="checkbox" name="social" value="linkedin"><span class="dot"></span>LinkedIn</label>
-        <label class="opt"><input type="checkbox" name="social" value="youtube"><span class="dot"></span>YouTube</label>
-        <label class="opt"><input type="checkbox" name="social" value="tiktok"><span class="dot"></span>TikTok</label>
-        <label class="opt"><input type="checkbox" name="social" value="x"><span class="dot"></span>X (Twitter)</label>
-        <label class="opt"><input type="checkbox" name="social" value="snapchat"><span class="dot"></span>Snapchat</label>
-      </div>
-    </div>
-
-    <div class="fld">
-      <label for="social_urls">Social Profile URLs</label>
-      <textarea id="social_urls" name="social_urls" placeholder="One per line, e.g.&#10;instagram.com/rocafuel&#10;facebook.com/rocafuel"></textarea>
-    </div>
   </div>
 </section>
 
@@ -655,7 +550,7 @@ h2.sec-title{font-size:clamp(26px,4.2vw,38px);line-height:1.1;color:var(--ink);m
 <section id="comms" class="page" aria-labelledby="comms-title">
   <div class="kicker">04 · Communication &amp; Calendar</div>
   <h2 class="sec-title" id="comms-title">How we talk. When we sync.</h2>
-  <p class="sec-sub">Project rhythm. Cadence and channel. Holidays we should know about.</p>
+  <p class="sec-sub">Project rhythm — cadence and channel.</p>
 
   <div class="form-section">
     <div class="fld">
@@ -669,43 +564,14 @@ h2.sec-title{font-size:clamp(26px,4.2vw,38px);line-height:1.1;color:var(--ink);m
       <div class="err-msg">Pick one</div>
     </div>
 
-    <div class="fld-row">
-      <div class="fld">
-        <label for="sync_freq">Sync Frequency <span class="req">*</span></label>
-        <select id="sync_freq" name="sync_freq" required>
-          <option value="weekly">Weekly</option>
-          <option value="biweekly">Every two weeks</option>
-          <option value="as_needed">As needed</option>
-        </select>
-        <div class="err-msg">Pick one</div>
-      </div>
-      <div class="fld">
-        <label for="sync_day">Preferred Sync Day</label>
-        <select id="sync_day" name="sync_day">
-          <option value="">No preference</option>
-          <option value="sun">Sunday</option>
-          <option value="mon">Monday</option>
-          <option value="tue">Tuesday</option>
-          <option value="wed">Wednesday</option>
-          <option value="thu">Thursday</option>
-        </select>
-        <div class="hint">Weekend is typically Sat–Sun</div>
-      </div>
-    </div>
-
     <div class="fld">
-      <label for="sync_time">Preferred Sync Time</label>
-      <input type="text" id="sync_time" name="sync_time" placeholder="e.g. 11:00 AM IST (UTC+5:30)">
-    </div>
-
-    <div class="fld">
-      <label for="blackout_dates">Holidays / Blackout Dates</label>
-      <textarea id="blackout_dates" name="blackout_dates" placeholder="Dates the team will be unavailable — e.g. Onam, Eid, Diwali, travel, etc."></textarea>
-    </div>
-
-    <div class="fld">
-      <label for="other_stakeholders">Other Stakeholders</label>
-      <textarea id="other_stakeholders" name="other_stakeholders" placeholder="Anyone else who should receive project updates&#10;Name · Role · Email · Update frequency (daily/weekly/launch-only)"></textarea>
+      <label for="sync_freq">Sync Frequency <span class="req">*</span></label>
+      <select id="sync_freq" name="sync_freq" required>
+        <option value="weekly">Weekly</option>
+        <option value="biweekly">Every two weeks</option>
+        <option value="as_needed">As needed</option>
+      </select>
+      <div class="err-msg">Pick one</div>
     </div>
   </div>
 </section>
