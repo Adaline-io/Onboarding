@@ -334,7 +334,7 @@ h2.sec-title{font-size:clamp(26px,4.2vw,38px);line-height:1.1;color:var(--ink);m
     <div class="tag">Project Onboarding</div>
     <div class="meta">
       <div><span class="ml">Project</span> <span class="mv">Roca Fuel · Customer Engagement Engine + Website</span></div>
-      <div><span class="ml">Programme</span> <span class="mv">⟨Total Programme⟩ · ⟨Timeline⟩</span></div>
+      <div><span class="ml">Programme</span> <span class="mv">₹1,66,500 · ≈ 8-week build</span></div>
     </div>
   </div>
   <div class="hero-mid">
@@ -350,7 +350,7 @@ h2.sec-title{font-size:clamp(26px,4.2vw,38px);line-height:1.1;color:var(--ink);m
     </div>
   </div>
   <div class="hero-foot">
-    <div class="desc">A short onboarding form to give Adaline everything we need to start work on the Roca Fuel website rebuild. Fill it in, hit submit, and kickoff happens within 48 hours. Sticky bar at the bottom tracks your progress.</div>
+    <div class="desc">A short onboarding form to give Adaline everything we need to start work on the Roca Fuel website and customer engagement engine. Fill it in, hit submit, and kickoff happens within 48 hours. Sticky bar at the bottom tracks your progress.</div>
     <div class="byline">Onboarding by<br/><strong>Adaline · The Agency</strong></div>
   </div>
 </section>
@@ -358,14 +358,14 @@ h2.sec-title{font-size:clamp(26px,4.2vw,38px);line-height:1.1;color:var(--ink);m
 
 <section id="process" class="page" aria-labelledby="process-title">
   <div class="kicker">00 · What Happens After You Submit</div>
-  <h2 class="sec-title" id="process-title">From here to launched site — six weeks.</h2>
-  <p class="sec-sub">Once this form is submitted, your project lead reaches out within 48 hours. Kickoff call books for week 1, design starts week 2, build runs weeks 3–5, launch week 6.</p>
+  <h2 class="sec-title" id="process-title">From here to live — about eight weeks.</h2>
+  <p class="sec-sub">Once this form is submitted, your project lead reaches out within 48 hours. Kickoff books for week 1, the website launches around week 4, and the customer engagement engine follows around week 7–8.</p>
 
   <div class="proc-strip">
     <div class="proc-step now"><div class="pn">STEP 01</div><h4>You Submit</h4><p>This form. Right now. ~10 minutes.</p></div>
     <div class="proc-step"><div class="pn">STEP 02</div><h4>Kickoff Call</h4><p>Within 48 hours. 60 minutes. Project lead introduces team, locks the kickoff date, schedules weekly syncs.</p></div>
-    <div class="proc-step"><div class="pn">STEP 03</div><h4>Build</h4><p>Weeks 1–5. Design, develop, catalog import, content. Weekly sync updates. Mid-project demo at week 3.</p></div>
-    <div class="proc-step"><div class="pn">STEP 04</div><h4>Launch</h4><p>Week 6. Testing, hosting, webmail go-live, training session, handover. Site live at rocafuel.com.</p></div>
+    <div class="proc-step"><div class="pn">STEP 03</div><h4>Build</h4><p>Track A — website (16–18 working days). Track B — engagement engine (30–35 working days). Weekly sync updates, mid-project demo.</p></div>
+    <div class="proc-step"><div class="pn">STEP 04</div><h4>Launch</h4><p>Website live first (~week 4), engagement engine around week 7–8. Testing, hosting, training, handover.</p></div>
   </div>
 </section>
 
@@ -390,20 +390,19 @@ h2.sec-title{font-size:clamp(26px,4.2vw,38px);line-height:1.1;color:var(--ink);m
 
     <div class="fld-row">
       <div class="fld">
-        <label for="tax_id">Tax ID / Company Registration <span class="req">*</span></label>
-        <input type="text" id="tax_id" name="tax_id" required placeholder="Kuwait company reg. number">
+        <label for="tax_id">GSTIN / Company Registration <span class="req">*</span></label>
+        <input type="text" id="tax_id" name="tax_id" required placeholder="GSTIN or company registration number">
         <div class="err-msg">Required for invoicing</div>
       </div>
       <div class="fld">
         <label for="country">Country <span class="req">*</span></label>
         <select id="country" name="country" required>
-          <option value="Kuwait" selected>Kuwait</option>
+          <option value="India" selected>India</option>
           <option value="UAE">UAE</option>
           <option value="KSA">Saudi Arabia</option>
           <option value="Qatar">Qatar</option>
           <option value="Bahrain">Bahrain</option>
           <option value="Oman">Oman</option>
-          <option value="India">India</option>
           <option value="Other">Other</option>
         </select>
       </div>
@@ -418,11 +417,10 @@ h2.sec-title{font-size:clamp(26px,4.2vw,38px);line-height:1.1;color:var(--ink);m
     <div class="fld">
       <label>Invoice Currency Preference <span class="req">*</span></label>
       <div class="opt-group">
-        <label class="opt"><input type="radio" name="currency" value="KWD" required><span class="dot"></span>KWD</label>
-        <label class="opt"><input type="radio" name="currency" value="INR"><span class="dot"></span>INR</label>
+        <label class="opt"><input type="radio" name="currency" value="INR" required><span class="dot"></span>INR</label>
         <label class="opt"><input type="radio" name="currency" value="USD"><span class="dot"></span>USD</label>
       </div>
-      <div class="hint">Invoiced in your preferred currency at prevailing exchange rate</div>
+      <div class="hint">Invoiced in INR by default; USD available at the prevailing exchange rate</div>
       <div class="err-msg">Pick one</div>
     </div>
   </div>
@@ -556,7 +554,7 @@ h2.sec-title{font-size:clamp(26px,4.2vw,38px);line-height:1.1;color:var(--ink);m
       <div class="hint" style="margin-bottom:10px">DHZ (your reference) supports many languages — what does Roca Fuel need at launch?</div>
       <div class="opt-cards">
         <label class="opt-card"><input type="radio" name="bilingual" value="en_only" required><span class="dot"></span><div class="ct"><div class="h">English only</div><div class="d">Phase 1, simplest, fastest to launch</div></div></label>
-        <label class="opt-card"><input type="radio" name="bilingual" value="en_ar"><span class="dot"></span><div class="ct"><div class="h">English + Arabic</div><div class="d">Adds scope (+₹15–20K) — confirms in kickoff</div></div></label>
+        <label class="opt-card"><input type="radio" name="bilingual" value="en_ml"><span class="dot"></span><div class="ct"><div class="h">English + Malayalam</div><div class="d">Adds scope (+₹15–20K) — confirms in kickoff</div></div></label>
       </div>
       <div class="err-msg">Pick one</div>
     </div>
@@ -579,7 +577,7 @@ h2.sec-title{font-size:clamp(26px,4.2vw,38px);line-height:1.1;color:var(--ink);m
           <option value="Namecheap">Namecheap</option>
           <option value="Cloudflare">Cloudflare</option>
           <option value="Google Domains">Google Domains</option>
-          <option value="Local provider">Local provider (Kuwait)</option>
+          <option value="Local provider">Local provider (India)</option>
           <option value="Other">Other</option>
           <option value="Unknown">Don't know</option>
         </select>
@@ -648,7 +646,7 @@ h2.sec-title{font-size:clamp(26px,4.2vw,38px);line-height:1.1;color:var(--ink);m
 
     <div class="fld">
       <label for="social_urls">Social Profile URLs</label>
-      <textarea id="social_urls" name="social_urls" placeholder="One per line, e.g.&#10;instagram.com/bzfitness&#10;facebook.com/bzfitness"></textarea>
+      <textarea id="social_urls" name="social_urls" placeholder="One per line, e.g.&#10;instagram.com/rocafuel&#10;facebook.com/rocafuel"></textarea>
     </div>
   </div>
 </section>
@@ -691,18 +689,18 @@ h2.sec-title{font-size:clamp(26px,4.2vw,38px);line-height:1.1;color:var(--ink);m
           <option value="wed">Wednesday</option>
           <option value="thu">Thursday</option>
         </select>
-        <div class="hint">Kuwait weekend is Fri–Sat</div>
+        <div class="hint">Weekend is typically Sat–Sun</div>
       </div>
     </div>
 
     <div class="fld">
       <label for="sync_time">Preferred Sync Time</label>
-      <input type="text" id="sync_time" name="sync_time" placeholder="e.g. 11:00 AM Kuwait time (GST UTC+3)">
+      <input type="text" id="sync_time" name="sync_time" placeholder="e.g. 11:00 AM IST (UTC+5:30)">
     </div>
 
     <div class="fld">
       <label for="blackout_dates">Holidays / Blackout Dates</label>
-      <textarea id="blackout_dates" name="blackout_dates" placeholder="Dates the team will be unavailable — e.g. Eid, National Day, Ramadan, travel, etc."></textarea>
+      <textarea id="blackout_dates" name="blackout_dates" placeholder="Dates the team will be unavailable — e.g. Onam, Eid, Diwali, travel, etc."></textarea>
     </div>
 
     <div class="fld">
@@ -721,8 +719,8 @@ h2.sec-title{font-size:clamp(26px,4.2vw,38px);line-height:1.1;color:var(--ink);m
   <div class="confirm-card">
     <div>
       <div class="cc-label">▸ TOTAL ENGAGEMENT FEE</div>
-      <div class="cc-value">⟨Total Programme⟩</div>
-      <div class="cc-detail">Website rebuild + hosting + webmail + SEO + training — all bundled. Exclusive of GST. Year-2 onward: <strong>₹6,000/year</strong> hosting renewal only.</div>
+      <div class="cc-value">₹1,66,500</div>
+      <div class="cc-detail">Portfolio website (₹68,500, incl. 1-year hosting) + customer engagement engine (₹98,000). Exclusive of GST.</div>
     </div>
     <label class="opt"><input type="checkbox" name="confirm_total" value="confirmed" required><span class="dot"></span>Confirmed</label>
   </div>
@@ -730,7 +728,7 @@ h2.sec-title{font-size:clamp(26px,4.2vw,38px);line-height:1.1;color:var(--ink);m
   <div class="confirm-card">
     <div>
       <div class="cc-label">▸ PAYMENT SCHEDULE — 40 / 40 / 20</div>
-      <div class="cc-value">₹37,200 + ₹37,200 + ₹18,600</div>
+      <div class="cc-value">₹66,600 + ₹66,600 + ₹33,300</div>
       <div class="cc-detail"><strong>40%</strong> deposit on engagement start · <strong>40%</strong> at design sign-off (~end of week 2) · <strong>20%</strong> on launch &amp; handover</div>
     </div>
     <label class="opt"><input type="checkbox" name="confirm_schedule" value="confirmed" required><span class="dot"></span>Confirmed</label>
@@ -775,7 +773,7 @@ h2.sec-title{font-size:clamp(26px,4.2vw,38px);line-height:1.1;color:var(--ink);m
   <div class="pay-card">
     <div class="pay-head">
       <div class="pl">▸ PAY THE DEPOSIT</div>
-      <h3>⟨Deposit Amount⟩ to start the build</h3>
+      <h3>₹66,600 to start the build</h3>
       <div class="pd">Bank transfer or UPI · Reference: Roca Fuel Project Deposit</div>
     </div>
     <div class="pay-body">
@@ -829,7 +827,7 @@ h2.sec-title{font-size:clamp(26px,4.2vw,38px);line-height:1.1;color:var(--ink);m
       </div>
       <div class="pay-upi">
         <div class="ph">Or Pay via UPI</div>
-        <div class="pay-qr"><img src="data:image/png;base64,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" alt="UPI QR code — scan to pay ₹37,200" loading="lazy"></div>
+        <div class="pay-qr"><img src="data:image/png;base64,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" alt="UPI QR code — scan to pay the project deposit" loading="lazy"></div>
         <div class="pay-upi-id">
           1myadaline@fbl
           <button type="button" class="copy-btn" data-copy="1myadaline@fbl" aria-label="Copy UPI ID">
@@ -875,12 +873,12 @@ h2.sec-title{font-size:clamp(26px,4.2vw,38px);line-height:1.1;color:var(--ink);m
     <div class="success-pay">
       <div class="sp-head">
         <div class="sp-l">▸ LOCK IN KICKOFF</div>
-        <h4>Pay the ⟨Deposit Amount⟩ deposit now</h4>
+        <h4>Pay the ₹66,600 deposit now</h4>
         <div class="sp-d">The build starts the day the deposit clears. Scan to pay or use the bank details below.</div>
       </div>
       <div class="success-pay-body">
         <div class="sp-qr">
-          <div class="pay-qr"><img src="data:image/png;base64,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" alt="UPI QR for ₹37,200"></div>
+          <div class="pay-qr"><img src="data:image/png;base64,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" alt="UPI QR for the project deposit"></div>
           <div class="pay-upi-id" style="margin-top:10px">1myadaline@fbl</div>
         </div>
         <div class="sp-bank">
@@ -1070,7 +1068,7 @@ h2.sec-title{font-size:clamp(26px,4.2vw,38px);line-height:1.1;color:var(--ink);m
 
   // GATHER FORM DATA AS STRUCTURED JSON
   function gatherFormData() {
-    const data = { _meta: { client: 'Roca Fuel', form: 'onboarding', submitted_at: new Date().toISOString(), project_total: '⟨Total Programme⟩' } };
+    const data = { _meta: { client: 'Roca Fuel', form: 'onboarding', submitted_at: new Date().toISOString(), project_total: '₹1,66,500' } };
     const sections = ['company', 'project', 'access', 'comms', 'payment'];
     sections.forEach(sec => data[sec] = {});
 
@@ -1103,7 +1101,7 @@ h2.sec-title{font-size:clamp(26px,4.2vw,38px);line-height:1.1;color:var(--ink);m
   function formatForWhatsApp(data) {
     let lines = [`*Roca Fuel — Project Onboarding Submission*`, ''];
     lines.push(`Submitted: ${new Date().toLocaleString()}`);
-    lines.push(`Project Total: ⟨Total Programme⟩`);
+    lines.push(`Project Total: ₹1,66,500`);
     lines.push('');
     const labels = { company: '01 · Company & Billing', project: '02 · Project Foundation', access: '03 · Technical Access', comms: '04 · Communication', payment: '05 · Payment' };
     Object.keys(labels).forEach(sec => {

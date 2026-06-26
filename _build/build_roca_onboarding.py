@@ -40,8 +40,8 @@ PAYMENT = {
     'ifsc': 'FDRL0001413',
     'branch': 'Calicut, Kerala',
     'upi_id': '1myadaline@fbl',
-    'deposit_amount': 50000,            # 40% of ⟨Total Programme⟩
-    'deposit_amount_display': '⟨Deposit Amount⟩',
+    'deposit_amount': 66600,            # 40% of ₹1,66,500 approved scope (website + engagement engine)
+    'deposit_amount_display': '₹66,600',
     'deposit_note': 'Roca Fuel Project Deposit',
 }
 
@@ -480,7 +480,7 @@ JS = """
 
   // GATHER FORM DATA AS STRUCTURED JSON
   function gatherFormData() {
-    const data = { _meta: { client: 'Roca Fuel', form: 'onboarding', submitted_at: new Date().toISOString(), project_total: '⟨Total Programme⟩' } };
+    const data = { _meta: { client: 'Roca Fuel', form: 'onboarding', submitted_at: new Date().toISOString(), project_total: '₹1,66,500' } };
     const sections = ['company', 'project', 'access', 'comms', 'payment'];
     sections.forEach(sec => data[sec] = {});
 
@@ -513,7 +513,7 @@ JS = """
   function formatForWhatsApp(data) {
     let lines = [`*Roca Fuel — Project Onboarding Submission*`, ''];
     lines.push(`Submitted: ${new Date().toLocaleString()}`);
-    lines.push(`Project Total: ⟨Total Programme⟩`);
+    lines.push(`Project Total: ₹1,66,500`);
     lines.push('');
     const labels = { company: '01 · Company & Billing', project: '02 · Project Foundation', access: '03 · Technical Access', comms: '04 · Communication', payment: '05 · Payment' };
     Object.keys(labels).forEach(sec => {
@@ -621,7 +621,7 @@ HERO = """
     <div class="tag">Project Onboarding</div>
     <div class="meta">
       <div><span class="ml">Project</span> <span class="mv">Roca Fuel · Customer Engagement Engine + Website</span></div>
-      <div><span class="ml">Programme</span> <span class="mv">⟨Total Programme⟩ · ⟨Timeline⟩</span></div>
+      <div><span class="ml">Programme</span> <span class="mv">₹1,66,500 · ≈ 8-week build</span></div>
     </div>
   </div>
   <div class="hero-mid">
@@ -637,7 +637,7 @@ HERO = """
     </div>
   </div>
   <div class="hero-foot">
-    <div class="desc">A short onboarding form to give Adaline everything we need to start work on the Roca Fuel website rebuild. Fill it in, hit submit, and kickoff happens within 48 hours. Sticky bar at the bottom tracks your progress.</div>
+    <div class="desc">A short onboarding form to give Adaline everything we need to start work on the Roca Fuel website and customer engagement engine. Fill it in, hit submit, and kickoff happens within 48 hours. Sticky bar at the bottom tracks your progress.</div>
     <div class="byline">Onboarding by<br/><strong>Adaline · The Agency</strong></div>
   </div>
 </section>
@@ -646,14 +646,14 @@ HERO = """
 PROCESS_STRIP = """
 <section id="process" class="page" aria-labelledby="process-title">
   <div class="kicker">00 · What Happens After You Submit</div>
-  <h2 class="sec-title" id="process-title">From here to launched site — six weeks.</h2>
-  <p class="sec-sub">Once this form is submitted, your project lead reaches out within 48 hours. Kickoff call books for week 1, design starts week 2, build runs weeks 3–5, launch week 6.</p>
+  <h2 class="sec-title" id="process-title">From here to live — about eight weeks.</h2>
+  <p class="sec-sub">Once this form is submitted, your project lead reaches out within 48 hours. Kickoff books for week 1, the website launches around week 4, and the customer engagement engine follows around week 7–8.</p>
 
   <div class="proc-strip">
     <div class="proc-step now"><div class="pn">STEP 01</div><h4>You Submit</h4><p>This form. Right now. ~10 minutes.</p></div>
     <div class="proc-step"><div class="pn">STEP 02</div><h4>Kickoff Call</h4><p>Within 48 hours. 60 minutes. Project lead introduces team, locks the kickoff date, schedules weekly syncs.</p></div>
-    <div class="proc-step"><div class="pn">STEP 03</div><h4>Build</h4><p>Weeks 1–5. Design, develop, catalog import, content. Weekly sync updates. Mid-project demo at week 3.</p></div>
-    <div class="proc-step"><div class="pn">STEP 04</div><h4>Launch</h4><p>Week 6. Testing, hosting, webmail go-live, training session, handover. Site live at rocafuel.com.</p></div>
+    <div class="proc-step"><div class="pn">STEP 03</div><h4>Build</h4><p>Track A — website (16–18 working days). Track B — engagement engine (30–35 working days). Weekly sync updates, mid-project demo.</p></div>
+    <div class="proc-step"><div class="pn">STEP 04</div><h4>Launch</h4><p>Website live first (~week 4), engagement engine around week 7–8. Testing, hosting, training, handover.</p></div>
   </div>
 </section>
 """
@@ -679,20 +679,19 @@ COMPANY = """
 
     <div class="fld-row">
       <div class="fld">
-        <label for="tax_id">Tax ID / Company Registration <span class="req">*</span></label>
-        <input type="text" id="tax_id" name="tax_id" required placeholder="Kuwait company reg. number">
+        <label for="tax_id">GSTIN / Company Registration <span class="req">*</span></label>
+        <input type="text" id="tax_id" name="tax_id" required placeholder="GSTIN or company registration number">
         <div class="err-msg">Required for invoicing</div>
       </div>
       <div class="fld">
         <label for="country">Country <span class="req">*</span></label>
         <select id="country" name="country" required>
-          <option value="Kuwait" selected>Kuwait</option>
+          <option value="India" selected>India</option>
           <option value="UAE">UAE</option>
           <option value="KSA">Saudi Arabia</option>
           <option value="Qatar">Qatar</option>
           <option value="Bahrain">Bahrain</option>
           <option value="Oman">Oman</option>
-          <option value="India">India</option>
           <option value="Other">Other</option>
         </select>
       </div>
@@ -707,11 +706,10 @@ COMPANY = """
     <div class="fld">
       <label>Invoice Currency Preference <span class="req">*</span></label>
       <div class="opt-group">
-        <label class="opt"><input type="radio" name="currency" value="KWD" required><span class="dot"></span>KWD</label>
-        <label class="opt"><input type="radio" name="currency" value="INR"><span class="dot"></span>INR</label>
+        <label class="opt"><input type="radio" name="currency" value="INR" required><span class="dot"></span>INR</label>
         <label class="opt"><input type="radio" name="currency" value="USD"><span class="dot"></span>USD</label>
       </div>
-      <div class="hint">Invoiced in your preferred currency at prevailing exchange rate</div>
+      <div class="hint">Invoiced in INR by default; USD available at the prevailing exchange rate</div>
       <div class="err-msg">Pick one</div>
     </div>
   </div>
@@ -846,7 +844,7 @@ PROJECT = """
       <div class="hint" style="margin-bottom:10px">DHZ (your reference) supports many languages — what does Roca Fuel need at launch?</div>
       <div class="opt-cards">
         <label class="opt-card"><input type="radio" name="bilingual" value="en_only" required><span class="dot"></span><div class="ct"><div class="h">English only</div><div class="d">Phase 1, simplest, fastest to launch</div></div></label>
-        <label class="opt-card"><input type="radio" name="bilingual" value="en_ar"><span class="dot"></span><div class="ct"><div class="h">English + Arabic</div><div class="d">Adds scope (+₹15–20K) — confirms in kickoff</div></div></label>
+        <label class="opt-card"><input type="radio" name="bilingual" value="en_ml"><span class="dot"></span><div class="ct"><div class="h">English + Malayalam</div><div class="d">Adds scope (+₹15–20K) — confirms in kickoff</div></div></label>
       </div>
       <div class="err-msg">Pick one</div>
     </div>
@@ -870,7 +868,7 @@ ACCESS = """
           <option value="Namecheap">Namecheap</option>
           <option value="Cloudflare">Cloudflare</option>
           <option value="Google Domains">Google Domains</option>
-          <option value="Local provider">Local provider (Kuwait)</option>
+          <option value="Local provider">Local provider (India)</option>
           <option value="Other">Other</option>
           <option value="Unknown">Don't know</option>
         </select>
@@ -939,7 +937,7 @@ ACCESS = """
 
     <div class="fld">
       <label for="social_urls">Social Profile URLs</label>
-      <textarea id="social_urls" name="social_urls" placeholder="One per line, e.g.&#10;instagram.com/bzfitness&#10;facebook.com/bzfitness"></textarea>
+      <textarea id="social_urls" name="social_urls" placeholder="One per line, e.g.&#10;instagram.com/rocafuel&#10;facebook.com/rocafuel"></textarea>
     </div>
   </div>
 </section>
@@ -983,18 +981,18 @@ COMMS = """
           <option value="wed">Wednesday</option>
           <option value="thu">Thursday</option>
         </select>
-        <div class="hint">Kuwait weekend is Fri–Sat</div>
+        <div class="hint">Weekend is typically Sat–Sun</div>
       </div>
     </div>
 
     <div class="fld">
       <label for="sync_time">Preferred Sync Time</label>
-      <input type="text" id="sync_time" name="sync_time" placeholder="e.g. 11:00 AM Kuwait time (GST UTC+3)">
+      <input type="text" id="sync_time" name="sync_time" placeholder="e.g. 11:00 AM IST (UTC+5:30)">
     </div>
 
     <div class="fld">
       <label for="blackout_dates">Holidays / Blackout Dates</label>
-      <textarea id="blackout_dates" name="blackout_dates" placeholder="Dates the team will be unavailable — e.g. Eid, National Day, Ramadan, travel, etc."></textarea>
+      <textarea id="blackout_dates" name="blackout_dates" placeholder="Dates the team will be unavailable — e.g. Onam, Eid, Diwali, travel, etc."></textarea>
     </div>
 
     <div class="fld">
@@ -1014,8 +1012,8 @@ PAYMENT_SECTION = f"""
   <div class="confirm-card">
     <div>
       <div class="cc-label">▸ TOTAL ENGAGEMENT FEE</div>
-      <div class="cc-value">⟨Total Programme⟩</div>
-      <div class="cc-detail">Website rebuild + hosting + webmail + SEO + training — all bundled. Exclusive of GST. Year-2 onward: <strong>₹6,000/year</strong> hosting renewal only.</div>
+      <div class="cc-value">₹1,66,500</div>
+      <div class="cc-detail">Portfolio website (₹68,500, incl. 1-year hosting) + customer engagement engine (₹98,000). Exclusive of GST.</div>
     </div>
     <label class="opt"><input type="checkbox" name="confirm_total" value="confirmed" required><span class="dot"></span>Confirmed</label>
   </div>
@@ -1023,7 +1021,7 @@ PAYMENT_SECTION = f"""
   <div class="confirm-card">
     <div>
       <div class="cc-label">▸ PAYMENT SCHEDULE — 40 / 40 / 20</div>
-      <div class="cc-value">₹37,200 + ₹37,200 + ₹18,600</div>
+      <div class="cc-value">₹66,600 + ₹66,600 + ₹33,300</div>
       <div class="cc-detail"><strong>40%</strong> deposit on engagement start · <strong>40%</strong> at design sign-off (~end of week 2) · <strong>20%</strong> on launch &amp; handover</div>
     </div>
     <label class="opt"><input type="checkbox" name="confirm_schedule" value="confirmed" required><span class="dot"></span>Confirmed</label>
@@ -1122,7 +1120,7 @@ PAYMENT_SECTION = f"""
       </div>
       <div class="pay-upi">
         <div class="ph">Or Pay via UPI</div>
-        <div class="pay-qr"><img src="data:image/png;base64,{UPI_QR}" alt="UPI QR code — scan to pay ₹37,200" loading="lazy"></div>
+        <div class="pay-qr"><img src="data:image/png;base64,{UPI_QR}" alt="UPI QR code — scan to pay the project deposit" loading="lazy"></div>
         <div class="pay-upi-id">
           {PAYMENT['upi_id']}
           <button type="button" class="copy-btn" data-copy="{PAYMENT['upi_id']}" aria-label="Copy UPI ID">
@@ -1175,7 +1173,7 @@ SUCCESS_BLOCK = f"""
       </div>
       <div class="success-pay-body">
         <div class="sp-qr">
-          <div class="pay-qr"><img src="data:image/png;base64,{UPI_QR}" alt="UPI QR for ₹37,200"></div>
+          <div class="pay-qr"><img src="data:image/png;base64,{UPI_QR}" alt="UPI QR for the project deposit"></div>
           <div class="pay-upi-id" style="margin-top:10px">{PAYMENT['upi_id']}</div>
         </div>
         <div class="sp-bank">
