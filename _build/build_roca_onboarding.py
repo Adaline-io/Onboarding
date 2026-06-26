@@ -1098,7 +1098,8 @@ CLOSE = f"""
     <div class="fb-sep" aria-hidden="true"></div>
     <div class="fb-tag">Onboarding by<br/><strong>Myadaline Communications LLP</strong></div>
     <div class="fb-contact">
-      <div class="fbc-em">Connect with us</div>
+      <div class="fbc-em">+91 90481 91616</div>
+      <div>bettercall@myadaline.com</div>
       <div class="fbc-fade">GSTIN 32ABYFM6787D1ZN · Calicut, Kerala</div>
     </div>
   </div>
