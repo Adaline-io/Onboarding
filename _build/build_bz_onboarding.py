@@ -24,7 +24,7 @@ SIGN_CROSS = b64('sign_cross.png')
 
 # These get replaced by Zo when Zoho Flow is set up.
 # Until then, the form falls back to WhatsApp + clipboard.
-WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbz1WGf-IVNVd0efTrXV1oY8U1bAHSCIiO-OEmQJ6CeI5gfMaUhooKIXke2tr92zvOdE/exec"
+WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbw03Lw2gCMqJwtt0akBK_roPll_DI90WxX3-2rjH2HRfwunEhfk-nOzTS3LZPknm_2D/exec"
 WA_NUMBER = "919048191616"
 
 # ============================================================

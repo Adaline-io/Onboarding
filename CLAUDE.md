@@ -146,7 +146,7 @@ When Jareer asks to add a new client onboarding:
 
 Every form POSTs to:
 ```
-https://script.google.com/macros/s/AKfycbz1WGf-IVNVd0efTrXV1oY8U1bAHSCIiO-OEmQJ6CeI5gfMaUhooKIXke2tr92zvOdE/exec
+https://script.google.com/macros/s/AKfycbw03Lw2gCMqJwtt0akBK_roPll_DI90WxX3-2rjH2HRfwunEhfk-nOzTS3LZPknm_2D/exec
 ```
 
 If a submission doesn't land in the Sheet, the fallback chain is:
