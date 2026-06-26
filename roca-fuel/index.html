@@ -114,6 +114,7 @@ h2.sec-title{font-size:clamp(26px,4.2vw,38px);line-height:1.1;color:var(--ink);m
 }
 .fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--acc);background:var(--paper-3)}
 .fld input:hover,.fld select:hover,.fld textarea:hover{border-color:var(--line-2)}
+.fld input.mirrored{opacity:.5;cursor:not-allowed;border-style:dashed}
 .fld textarea{min-height:84px;resize:vertical;font-family:var(--body);line-height:1.55}
 .fld select{cursor:pointer;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:36px}
 .fld input::placeholder,.fld textarea::placeholder{color:var(--muted-2)}
@@ -444,12 +445,13 @@ h2.sec-title{font-size:clamp(26px,4.2vw,38px);line-height:1.1;color:var(--ink);m
     </div>
   </div>
 
-  <h3 style="font-family:var(--display);font-size:18px;color:var(--ink);margin:36px 0 18px;font-weight:700">Day-to-Day Contact <span style="font-family:var(--mono);font-size:11px;color:var(--muted);font-weight:400;letter-spacing:.1em;text-transform:uppercase;margin-left:12px">— if different from above</span></h3>
+  <h3 style="font-family:var(--display);font-size:18px;color:var(--ink);margin:36px 0 14px;font-weight:700">Day-to-Day Contact</h3>
+  <label class="opt dd-same" style="margin-bottom:16px"><input type="checkbox" id="dd_same"><span class="dot"></span>Same as the decision-maker above</label>
   <div class="form-section">
     <div class="fld-row">
       <div class="fld">
         <label for="dd_name">Name</label>
-        <input type="text" id="dd_name" name="dd_name" placeholder="Leave blank if same as decision-maker">
+        <input type="text" id="dd_name" name="dd_name" placeholder="If different from the decision-maker">
       </div>
       <div class="fld">
         <label for="dd_role">Role</label>
@@ -930,6 +932,31 @@ h2.sec-title{font-size:clamp(26px,4.2vw,38px);line-height:1.1;color:var(--ink);m
       }
     });
   });
+
+  // "SAME AS ABOVE" — mirror decision-maker into the day-to-day contact
+  (function () {
+    const ddSame = document.getElementById('dd_same');
+    if (!ddSame) return;
+    const map = [['dd_name', 'dm_name'], ['dd_role', 'dm_title'], ['dd_email', 'dm_email'], ['dd_phone', 'dm_phone']];
+    function sync() {
+      map.forEach(pair => {
+        const d = document.getElementById(pair[0]);
+        const m = document.getElementById(pair[1]);
+        if (!d || !m) return;
+        if (ddSame.checked) { d.value = m.value; d.readOnly = true; d.classList.add('mirrored'); }
+        else { d.readOnly = false; d.classList.remove('mirrored'); }
+      });
+    }
+    ddSame.addEventListener('change', () => {
+      if (!ddSame.checked) map.forEach(pair => { const d = document.getElementById(pair[0]); if (d) d.value = ''; });
+      sync();
+    });
+    // keep in sync if the decision-maker details change while ticked
+    ['dm_name', 'dm_title', 'dm_email', 'dm_phone'].forEach(id => {
+      const m = document.getElementById(id);
+      if (m) m.addEventListener('input', () => { if (ddSame.checked) sync(); });
+    });
+  })();
 
   // GATHER FORM DATA AS STRUCTURED JSON
   function gatherFormData() {
