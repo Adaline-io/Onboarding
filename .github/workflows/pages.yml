@@ -6,6 +6,7 @@ name: Deploy onboarding forms to GitHub Pages
 on:
   push:
     branches:
+      - Main
       - main
       - claude/github-onboarding-setup-u9ln1c
   workflow_dispatch:
