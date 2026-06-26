@@ -996,7 +996,7 @@ PAYMENT_SECTION = f"""
         <div class="pay-upi-hint">Scan with GPay / PhonePe / Paytm — amount pre-fills</div>
       </div>
     </div>
-    <div class="pay-foot">Send the transaction reference to <strong>bettercall@myadaline.com</strong> once paid</div>
+    <div class="pay-foot">Share the transaction reference with your project lead once paid</div>
   </div>
 
 </section>
@@ -1028,7 +1028,7 @@ SUCCESS_BLOCK = f"""
       → Your project lead introduces themselves via WhatsApp<br/>
       → Deposit invoice goes to your AP email<br/>
       → Kickoff call gets booked into your calendar<br/>
-      → Brand assets + product data collection starts<br/>
+      → Brand assets collection starts<br/>
     </div>
 
     <div class="success-pay">
@@ -1050,7 +1050,7 @@ SUCCESS_BLOCK = f"""
           <div class="sp-bank-row"><span class="sp-k">Ref</span><span class="sp-v">{PAYMENT['deposit_note']}</span></div>
         </div>
       </div>
-      <div class="sp-foot">Send transaction reference to <strong>bettercall@myadaline.com</strong> when paid</div>
+      <div class="sp-foot">Share the transaction reference with your project lead when paid</div>
     </div>
   </div>
 </section>
@@ -1064,15 +1064,14 @@ CLOSE = f"""
     <img src="data:image/png;base64,{SIGN_CROSS}" alt="" loading="lazy">
   </div>
   <h2 class="thanks">Let's<br/>get to it.</h2>
-  <div class="ck">Questions before submitting? WhatsApp <strong style="color:var(--acc)">+91 90481 91616</strong> or email bettercall@myadaline.com</div>
+  <div class="ck">Questions before submitting? <strong style="color:var(--acc)">Connect with us</strong> — your project lead is one message away.</div>
 
   <div class="foot-block">
     <div class="fb-wm"><img src="data:image/png;base64,{WM_FOOTER}" alt="Adaline"></div>
     <div class="fb-sep" aria-hidden="true"></div>
     <div class="fb-tag">Onboarding by<br/><strong>Myadaline Communications LLP</strong></div>
     <div class="fb-contact">
-      <div class="fbc-em">+91 90481 91616</div>
-      <div>bettercall@myadaline.com</div>
+      <div class="fbc-em">Connect with us</div>
       <div class="fbc-fade">GSTIN 32ABYFM6787D1ZN · Calicut, Kerala</div>
     </div>
   </div>
