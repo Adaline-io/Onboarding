@@ -166,6 +166,7 @@ h2.sec-title{font-size:clamp(26px,4.2vw,38px);line-height:1.1;color:var(--ink);m
 }
 .fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--acc);background:var(--paper-3)}
 .fld input:hover,.fld select:hover,.fld textarea:hover{border-color:var(--line-2)}
+.fld input.mirrored{opacity:.5;cursor:not-allowed;border-style:dashed}
 .fld textarea{min-height:84px;resize:vertical;font-family:var(--body);line-height:1.55}
 .fld select{cursor:pointer;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:36px}
 .fld input::placeholder,.fld textarea::placeholder{color:var(--muted-2)}
@@ -478,6 +479,30 @@ JS = """
     });
   });
 
+  // "SAME AS ABOVE" — mirror decision-maker into the day-to-day contact
+  (function () {
+    const ddSame = document.getElementById('dd_same');
+    if (!ddSame) return;
+    const map = [['dd_name', 'dm_name'], ['dd_role', 'dm_title'], ['dd_email', 'dm_email'], ['dd_phone', 'dm_phone']];
+    function sync() {
+      map.forEach(pair => {
+        const d = document.getElementById(pair[0]);
+        const m = document.getElementById(pair[1]);
+        if (!d || !m) return;
+        if (ddSame.checked) { d.value = m.value; d.readOnly = true; d.classList.add('mirrored'); }
+        else { d.readOnly = false; d.classList.remove('mirrored'); }
+      });
+    }
+    ddSame.addEventListener('change', () => {
+      if (!ddSame.checked) map.forEach(pair => { const d = document.getElementById(pair[0]); if (d) d.value = ''; });
+      sync();
+    });
+    ['dm_name', 'dm_title', 'dm_email', 'dm_phone'].forEach(id => {
+      const m = document.getElementById(id);
+      if (m) m.addEventListener('input', () => { if (ddSame.checked) sync(); });
+    });
+  })();
+
   // GATHER FORM DATA AS STRUCTURED JSON
   function gatherFormData() {
     const data = { _meta: { client: 'BZ Fitness', form: 'onboarding', submitted_at: new Date().toISOString(), project_total: '₹93,000' } };
@@ -744,12 +769,13 @@ COMPANY = """
     </div>
   </div>
 
-  <h3 style="font-family:var(--display);font-size:18px;color:var(--ink);margin:36px 0 18px;font-weight:700">Day-to-Day Contact <span style="font-family:var(--mono);font-size:11px;color:var(--muted);font-weight:400;letter-spacing:.1em;text-transform:uppercase;margin-left:12px">— if different from above</span></h3>
+  <h3 style="font-family:var(--display);font-size:18px;color:var(--ink);margin:36px 0 14px;font-weight:700">Day-to-Day Contact</h3>
+  <label class="opt dd-same" style="margin-bottom:16px"><input type="checkbox" id="dd_same"><span class="dot"></span>Same as the decision-maker above</label>
   <div class="form-section">
     <div class="fld-row">
       <div class="fld">
         <label for="dd_name">Name</label>
-        <input type="text" id="dd_name" name="dd_name" placeholder="Leave blank if same as decision-maker">
+        <input type="text" id="dd_name" name="dd_name" placeholder="If different from the decision-maker">
       </div>
       <div class="fld">
         <label for="dd_role">Role</label>
@@ -963,43 +989,14 @@ COMMS = """
       <div class="err-msg">Pick one</div>
     </div>
 
-    <div class="fld-row">
-      <div class="fld">
-        <label for="sync_freq">Sync Frequency <span class="req">*</span></label>
-        <select id="sync_freq" name="sync_freq" required>
-          <option value="weekly">Weekly</option>
-          <option value="biweekly">Every two weeks</option>
-          <option value="as_needed">As needed</option>
-        </select>
-        <div class="err-msg">Pick one</div>
-      </div>
-      <div class="fld">
-        <label for="sync_day">Preferred Sync Day</label>
-        <select id="sync_day" name="sync_day">
-          <option value="">No preference</option>
-          <option value="sun">Sunday</option>
-          <option value="mon">Monday</option>
-          <option value="tue">Tuesday</option>
-          <option value="wed">Wednesday</option>
-          <option value="thu">Thursday</option>
-        </select>
-        <div class="hint">Kuwait weekend is Fri–Sat</div>
-      </div>
-    </div>
-
     <div class="fld">
-      <label for="sync_time">Preferred Sync Time</label>
-      <input type="text" id="sync_time" name="sync_time" placeholder="e.g. 11:00 AM Kuwait time (GST UTC+3)">
-    </div>
-
-    <div class="fld">
-      <label for="blackout_dates">Holidays / Blackout Dates</label>
-      <textarea id="blackout_dates" name="blackout_dates" placeholder="Dates the team will be unavailable — e.g. Eid, National Day, Ramadan, travel, etc."></textarea>
-    </div>
-
-    <div class="fld">
-      <label for="other_stakeholders">Other Stakeholders</label>
-      <textarea id="other_stakeholders" name="other_stakeholders" placeholder="Anyone else who should receive project updates&#10;Name · Role · Email · Update frequency (daily/weekly/launch-only)"></textarea>
+      <label for="sync_freq">Sync Frequency <span class="req">*</span></label>
+      <select id="sync_freq" name="sync_freq" required>
+        <option value="weekly">Weekly</option>
+        <option value="biweekly">Every two weeks</option>
+        <option value="as_needed">As needed</option>
+      </select>
+      <div class="err-msg">Pick one</div>
     </div>
   </div>
 </section>
@@ -1132,7 +1129,7 @@ PAYMENT_SECTION = f"""
         <div class="pay-upi-hint">Scan with GPay / PhonePe / Paytm — amount pre-fills</div>
       </div>
     </div>
-    <div class="pay-foot">Send the transaction reference to <strong>bettercall@myadaline.com</strong> once paid</div>
+    <div class="pay-foot">Share the transaction reference with your project lead once paid</div>
   </div>
 
 </section>
@@ -1186,7 +1183,7 @@ SUCCESS_BLOCK = f"""
           <div class="sp-bank-row"><span class="sp-k">Ref</span><span class="sp-v">{PAYMENT['deposit_note']}</span></div>
         </div>
       </div>
-      <div class="sp-foot">Send transaction reference to <strong>bettercall@myadaline.com</strong> when paid</div>
+      <div class="sp-foot">Share the transaction reference with your project lead when paid</div>
     </div>
   </div>
 </section>
@@ -1200,7 +1197,7 @@ CLOSE = f"""
     <img src="data:image/png;base64,{SIGN_CROSS}" alt="" loading="lazy">
   </div>
   <h2 class="thanks">Let's<br/>get to it.</h2>
-  <div class="ck">Questions before submitting? WhatsApp <strong style="color:var(--acc)">+91 90481 91616</strong> or email bettercall@myadaline.com</div>
+  <div class="ck">Questions before submitting? <strong style="color:var(--acc)">Connect with us</strong> — your project lead is one message away.</div>
 
   <div class="foot-block">
     <div class="fb-wm"><img src="data:image/png;base64,{WM_FOOTER}" alt="Adaline"></div>
