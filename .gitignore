@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+
+# System
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Build artifacts (we commit the built HTMLs intentionally — they are the deployment)
+# Leave bz-fitness/index.html and roca-fuel/index.html tracked.

@@ -1,0 +1,48 @@
+name: Deploy onboarding forms to GitHub Pages
+
+# Publishes the static onboarding site (root index.html + per-client folders)
+# to GitHub Pages. The site is pre-built static HTML — no build step needed.
+
+on:
+  push:
+    branches:
+      - main
+      - claude/github-onboarding-setup-u9ln1c
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment, cancel in-progress runs for the same ref.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure Pages
+        # enablement: true turns on Pages (build type = GitHub Actions) if it
+        # isn't already enabled, so no manual Settings toggle is required.
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Repo root is the site root: index.html, bz-fitness/, roca-fuel/.
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
