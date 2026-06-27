@@ -36,17 +36,17 @@ h1 .ac{color:var(--acc)}
   <p class="sub">Per-client onboarding form. Each link is the URL to send clients. Submissions land in the Adaline Onboarding Sheet automatically.</p>
 
   <div class="list">
-    <a class="client" href="./bz-fitness/">
-      <div class="l">
-        <div class="name">BZ Fitness</div>
-        <div class="meta">Website rebuild · Kuwait · ₹93,000 · accent #ff4d2e</div>
-      </div>
-      <span class="arr"></span>
-    </a>
     <a class="client" href="./roca-fuel/">
       <div class="l">
         <div class="name">Roca Fuel</div>
         <div class="meta">Customer engagement engine + website · accent #ffd00a</div>
+      </div>
+      <span class="arr"></span>
+    </a>
+    <a class="client" href="./bz-fitness/">
+      <div class="l">
+        <div class="name">BZ Fitness</div>
+        <div class="meta">Website rebuild · Kuwait · ₹93,000 · accent #ff4d2e</div>
       </div>
       <span class="arr"></span>
     </a>
@@ -57,7 +57,7 @@ h1 .ac{color:var(--acc)}
     1. Send Claude the client name, project, total, accent colour<br/>
     2. Claude builds the onboarding HTML same-turn<br/>
     3. Drop the new folder (e.g. <code>new-client/index.html</code>) into this repo via github.com upload<br/>
-    4. Add a new link block to this index<br/>
+    4. Add the new link block at the <strong>top</strong> of the list (newest first)<br/>
     5. Done — new URL is <code>github.io/adaline-onboarding/new-client/</code><br/><br/>
     <strong>Forms data:</strong> all submissions hit the Apps Script webhook → "Adaline Onboarding" Sheet → email to <a href="mailto:bettercall@myadaline.com">bettercall@myadaline.com</a> with PDF attached.
   </div>

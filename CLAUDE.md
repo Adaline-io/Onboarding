@@ -133,7 +133,7 @@ When Jareer asks to add a new client onboarding:
    ```
    This creates `../{client-slug}/index.html` automatically.
 
-4. **Add the client to the team directory** (`index.html` at repo root). Find the `.list` div and add a new `<a class="client" href="./{client-slug}/">` block matching the existing pattern.
+4. **Add the client to the team directory** (`index.html` at repo root). Find the `.list` div and add a new `<a class="client" href="./{client-slug}/">` block matching the existing pattern. **Always add it at the top of the list** — the team directory is ordered newest-first, so every new onboarding comes first.
 
 5. **Commit and push:**
    ```bash
