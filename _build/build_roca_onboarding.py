@@ -188,6 +188,9 @@ h2.sec-title{font-size:clamp(26px,4.2vw,38px);line-height:1.1;color:var(--ink);m
 .opt input:checked ~ .dot{border-color:var(--acc);background:var(--acc)}
 .opt input[type="radio"]:checked ~ .dot::after{content:"";position:absolute;inset:3px;background:var(--paper);border-radius:50%}
 .opt input[type="checkbox"]:checked ~ .dot::after{content:"";position:absolute;left:3px;top:0px;width:4px;height:8px;border:solid var(--paper);border-width:0 2px 2px 0;transform:rotate(45deg)}
+/* keep option pills/cards as flex even inside .fld (which sets label{display:block;text-transform:uppercase}) */
+.fld label.opt{display:inline-flex;align-items:center;gap:8px;text-transform:none;margin-bottom:0;font-weight:400;font-size:12px}
+.fld label.opt-card{display:flex;align-items:flex-start;gap:12px;text-transform:none;margin-bottom:0;font-weight:400}
 
 .opt-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
 .opt-card{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:14px;cursor:pointer;transition:all .15s;position:relative;display:flex;align-items:flex-start;gap:12px}
