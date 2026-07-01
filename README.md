@@ -31,7 +31,7 @@ adaline-onboarding/
 
 Every submission across all clients lands in the same place:
 
-1. **Google Sheet** — `Adaline Onboarding` Sheet, new row in the `Onboarding` or `Offboarding` tab (auto-created by form type)
+1. **Google Sheet** — `Adaline Onboarding` Sheet, new row in the `Onboarding` tab (one row per submission, each field its own column)
 2. **Google Drive folder** — `Adaline Client Submissions` (PDF + Doc archive of every submission)
 3. **Email** — PDF lands in `bettercall@myadaline.com` inbox with subject `[Adaline] Onboarding: [Client]`
 
