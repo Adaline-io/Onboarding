@@ -4,7 +4,7 @@ BZ Fitness — Project Onboarding Form
 Visual continuity with the proposal (same dark theme, #ff4d2e accent,
 Space Grotesk / Inter / JetBrains Mono).
 Submits to Zoho Flow webhook → fallback to WhatsApp → fallback to copy.
-Includes Adaline bank details + UPI QR for 40% advance payment.
+Includes Adaline bank details + UPI QR for milestone payments (₹25k advance already received).
 """
 import base64
 import pathlib
@@ -40,9 +40,9 @@ PAYMENT = {
     'ifsc': 'FDRL0001413',
     'branch': 'Calicut, Kerala',
     'upi_id': '1myadaline@fbl',
-    'deposit_amount': 37200,            # 40% of ₹93,000
-    'deposit_amount_display': '₹37,200',
-    'deposit_note': 'BZ Fitness Project Deposit',
+    'deposit_amount': 34000,            # next milestone (design sign-off); ₹25k advance already received
+    'deposit_amount_display': '₹34,000',
+    'deposit_note': 'BZ Fitness — Milestone Payment',
 }
 
 def gen_upi_qr(upi_id, name, amount, note):
@@ -1016,9 +1016,9 @@ PAYMENT_SECTION = f"""
 
   <div class="confirm-card">
     <div>
-      <div class="cc-label">▸ PAYMENT SCHEDULE — 40 / 40 / 20</div>
-      <div class="cc-value">₹37,200 + ₹37,200 + ₹18,600</div>
-      <div class="cc-detail"><strong>40%</strong> deposit on engagement start · <strong>40%</strong> at design sign-off (~end of week 2) · <strong>20%</strong> on launch &amp; handover</div>
+      <div class="cc-label">▸ PAYMENT SCHEDULE</div>
+      <div class="cc-value">₹25,000 (received) + ₹34,000 + ₹34,000</div>
+      <div class="cc-detail"><strong>₹25,000</strong> advance — received ✓ · <strong>₹34,000</strong> at design sign-off (~end of week 2) · <strong>₹34,000</strong> on launch &amp; handover</div>
     </div>
     <label class="opt"><input type="checkbox" name="confirm_schedule" value="confirmed" required><span class="dot"></span>Confirmed</label>
   </div>
@@ -1045,25 +1045,13 @@ PAYMENT_SECTION = f"""
       <label for="invoice_notes">Invoice Requirements (optional)</label>
       <textarea id="invoice_notes" name="invoice_notes" placeholder="PO number formats, GST registration to reference, addressee lines, attachments required, etc."></textarea>
     </div>
-
-    <div class="fld">
-      <label>40% Deposit Timing <span class="req">*</span></label>
-      <div class="opt-group">
-        <label class="opt"><input type="radio" name="deposit_timing" value="immediately" required><span class="dot"></span>Within 3 days</label>
-        <label class="opt"><input type="radio" name="deposit_timing" value="week"><span class="dot"></span>Within 7 days</label>
-        <label class="opt"><input type="radio" name="deposit_timing" value="fortnight"><span class="dot"></span>Within 14 days</label>
-        <label class="opt"><input type="radio" name="deposit_timing" value="end_of_month"><span class="dot"></span>End of month</label>
-      </div>
-      <div class="hint">Kickoff scheduling depends on this — design phase begins once deposit clears</div>
-      <div class="err-msg">Pick one</div>
-    </div>
   </div>
 
   <div class="pay-card">
     <div class="pay-head">
-      <div class="pl">▸ PAY THE DEPOSIT</div>
-      <h3>{PAYMENT['deposit_amount_display']} to start the build</h3>
-      <div class="pd">Bank transfer or UPI · Reference: {PAYMENT['deposit_note']}</div>
+      <div class="pl">▸ ADVANCE RECEIVED ✓</div>
+      <h3>₹25,000 advance received — thank you</h3>
+      <div class="pd">Balance: ₹34,000 at design sign-off · ₹34,000 on launch. Bank &amp; UPI below for milestone payments · Reference: {PAYMENT['deposit_note']}</div>
     </div>
     <div class="pay-body">
       <div class="pay-bank">
@@ -1116,7 +1104,7 @@ PAYMENT_SECTION = f"""
       </div>
       <div class="pay-upi">
         <div class="ph">Or Pay via UPI</div>
-        <div class="pay-qr"><img src="data:image/png;base64,{UPI_QR}" alt="UPI QR code — scan to pay ₹37,200" loading="lazy"></div>
+        <div class="pay-qr"><img src="data:image/png;base64,{UPI_QR}" alt="UPI QR code — scan for milestone payment" loading="lazy"></div>
         <div class="pay-upi-id">
           {PAYMENT['upi_id']}
           <button type="button" class="copy-btn" data-copy="{PAYMENT['upi_id']}" aria-label="Copy UPI ID">
@@ -1163,13 +1151,13 @@ SUCCESS_BLOCK = f"""
 
     <div class="success-pay">
       <div class="sp-head">
-        <div class="sp-l">▸ LOCK IN KICKOFF</div>
-        <h4>Pay the {PAYMENT['deposit_amount_display']} deposit now</h4>
-        <div class="sp-d">The build starts the day the deposit clears. Scan to pay or use the bank details below.</div>
+        <div class="sp-l">▸ ADVANCE RECEIVED ✓</div>
+        <h4>₹25,000 advance received — next: ₹34,000 at sign-off</h4>
+        <div class="sp-d">Balance is ₹34,000 at design sign-off and ₹34,000 on launch. Scan or use the bank details below for milestone payments.</div>
       </div>
       <div class="success-pay-body">
         <div class="sp-qr">
-          <div class="pay-qr"><img src="data:image/png;base64,{UPI_QR}" alt="UPI QR for ₹37,200"></div>
+          <div class="pay-qr"><img src="data:image/png;base64,{UPI_QR}" alt="UPI QR for milestone payment"></div>
           <div class="pay-upi-id" style="margin-top:10px">{PAYMENT['upi_id']}</div>
         </div>
         <div class="sp-bank">
