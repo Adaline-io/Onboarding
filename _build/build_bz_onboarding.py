@@ -693,7 +693,7 @@ COMPANY = """
     <div class="fld-row">
       <div class="fld">
         <label for="legal_name">Legal Entity Name <span class="req">*</span></label>
-        <input type="text" id="legal_name" name="legal_name" required placeholder="e.g. BZ Fitness Trading Co. W.L.L.">
+        <input type="text" id="legal_name" name="legal_name" required placeholder="e.g. BZ Fitness Equipment Pvt Ltd">
         <div class="err-msg">Required</div>
       </div>
       <div class="fld">
@@ -704,20 +704,18 @@ COMPANY = """
 
     <div class="fld-row">
       <div class="fld">
-        <label for="tax_id">Tax ID / Company Registration <span class="req">*</span></label>
-        <input type="text" id="tax_id" name="tax_id" required placeholder="Kuwait company reg. number">
+        <label for="tax_id">GSTIN / Company Registration <span class="req">*</span></label>
+        <input type="text" id="tax_id" name="tax_id" required placeholder="GSTIN or company registration number">
         <div class="err-msg">Required for invoicing</div>
       </div>
       <div class="fld">
         <label for="country">Country <span class="req">*</span></label>
         <select id="country" name="country" required>
-          <option value="Kuwait" selected>Kuwait</option>
+          <option value="India" selected>India</option>
           <option value="UAE">UAE</option>
-          <option value="KSA">Saudi Arabia</option>
-          <option value="Qatar">Qatar</option>
-          <option value="Bahrain">Bahrain</option>
-          <option value="Oman">Oman</option>
-          <option value="India">India</option>
+          <option value="USA">USA</option>
+          <option value="UK">UK</option>
+          <option value="Singapore">Singapore</option>
           <option value="Other">Other</option>
         </select>
       </div>
@@ -732,11 +730,10 @@ COMPANY = """
     <div class="fld">
       <label>Invoice Currency Preference <span class="req">*</span></label>
       <div class="opt-group">
-        <label class="opt"><input type="radio" name="currency" value="KWD" required><span class="dot"></span>KWD</label>
-        <label class="opt"><input type="radio" name="currency" value="INR"><span class="dot"></span>INR</label>
+        <label class="opt"><input type="radio" name="currency" value="INR" required><span class="dot"></span>INR</label>
         <label class="opt"><input type="radio" name="currency" value="USD"><span class="dot"></span>USD</label>
       </div>
-      <div class="hint">Invoiced in your preferred currency at prevailing exchange rate</div>
+      <div class="hint">Invoiced in INR by default; USD available for global orders at the prevailing exchange rate</div>
       <div class="err-msg">Pick one</div>
     </div>
   </div>
@@ -763,7 +760,7 @@ COMPANY = """
       </div>
       <div class="fld">
         <label for="dm_phone">Phone / WhatsApp <span class="req">*</span></label>
-        <input type="tel" id="dm_phone" name="dm_phone" required placeholder="+965...">
+        <input type="tel" id="dm_phone" name="dm_phone" required placeholder="+91...">
         <div class="err-msg">Required</div>
       </div>
     </div>
@@ -869,10 +866,10 @@ PROJECT = """
 
     <div class="fld">
       <label>Bilingual Support <span class="req">*</span></label>
-      <div class="hint" style="margin-bottom:10px">DHZ (your reference) supports many languages — what does BZ Fitness need at launch?</div>
+      <div class="hint" style="margin-bottom:10px">What languages does the site need at launch?</div>
       <div class="opt-cards">
         <label class="opt-card"><input type="radio" name="bilingual" value="en_only" required><span class="dot"></span><div class="ct"><div class="h">English only</div><div class="d">Phase 1, simplest, fastest to launch</div></div></label>
-        <label class="opt-card"><input type="radio" name="bilingual" value="en_ar"><span class="dot"></span><div class="ct"><div class="h">English + Arabic</div><div class="d">Adds scope (+₹15–20K) — confirms in kickoff</div></div></label>
+        <label class="opt-card"><input type="radio" name="bilingual" value="en_hi"><span class="dot"></span><div class="ct"><div class="h">English + Hindi</div><div class="d">Adds scope (+₹15–20K) — confirms in kickoff</div></div></label>
       </div>
       <div class="err-msg">Pick one</div>
     </div>
@@ -896,7 +893,7 @@ ACCESS = """
           <option value="Namecheap">Namecheap</option>
           <option value="Cloudflare">Cloudflare</option>
           <option value="Google Domains">Google Domains</option>
-          <option value="Local provider">Local provider (Kuwait)</option>
+          <option value="Local provider">Local provider (India)</option>
           <option value="Other">Other</option>
           <option value="Unknown">Don't know</option>
         </select>
